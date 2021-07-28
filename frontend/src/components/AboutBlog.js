@@ -18,9 +18,9 @@ const AboutBlog = ({ match, blogId }) => {
       {loading ? (
         <p style={{ marginTop: '400px', color: 'black' }}>Loading</p>
       ) : (
-        <Card  >
+        <Card className="customCard" >
         
-          <Card.Img variant="top"  src={`${blogs.file}`} style={{height:"50vh", width:"100%"}}/>
+          <Card.Img variant="top"  src={`${blogs.file}`} style={{height:"40vh", width:"100%"}}/>
           <Card.Body>
             <Card.Title>{blogs.blogTitle}<span><small className="text-muted customSmall" style={{fontSize:"12px"}}><span style={{color:"black"}}>@{blogs.userName}</span></small></span></Card.Title>
             <Card.Footer>
