@@ -1,6 +1,7 @@
 # My_Blog_Assignment
 
 > Simple Bloging platform built with the MERN stack & Redux.
+This is the [Live Link of Project](https://myblogassignment.herokuapp.com/)
 
 ![screenshot](https://github.com/itsakhilrana/My_Blog_Assignment/blob/master/uploads/DevBlog.png)
 
