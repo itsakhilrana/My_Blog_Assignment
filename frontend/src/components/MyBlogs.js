@@ -58,7 +58,7 @@ const MyBlogs = () => {
         <Row xs={1} sm={2} md={3} style={{ margin: '20px' }} className="g-4">
           {blog.map((cards) => (
             <Col key={cards.createdAt}>
-              <Card>
+              <Card className="customCard">
                 <Card.Img
                   style={{ height: '40vh', width: '100%' }}
                   variant="top"
