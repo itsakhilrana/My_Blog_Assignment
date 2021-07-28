@@ -19,7 +19,7 @@ const BlogList = () => {
 
   useEffect(() => {
     dispatch(blogListAction())
-  }, [dispatch])
+  }, [dispatch,blogs])
     return (
         <div>
           {loading ? (
