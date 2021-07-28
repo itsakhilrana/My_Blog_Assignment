@@ -36,7 +36,7 @@ const MyBlogs = () => {
         </p>
       ) : blog.message ? (
         <>
-          <LinkContainer to={`/writeblogs`}style={{
+          <LinkContainer className="m-5" to={`/writeblogs`}style={{
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -57,7 +57,7 @@ const MyBlogs = () => {
       ) : (
         <Row xs={1} sm={2} md={3} style={{ margin: '20px' }} className="g-4">
           {blog.map((cards) => (
-            <Col>
+            <Col key={cards.createdAt}>
               <Card>
                 <Card.Img
                   style={{ height: '40vh', width: '100%' }}
