@@ -34,8 +34,8 @@
 .customCard{
   border-radius: 3px;
 background: #f5f5f5;
-box-shadow:  8px 8px 17px #e6e6e6,
-             -8px -8px 17px #ffffff;
+box-shadow: 2px 4px 7px 3px #e2e2e2;
+          
 }
 
 .customSpan{
