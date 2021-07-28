@@ -14,13 +14,13 @@ const AboutBlog = ({ match, blogId }) => {
     dispatch(readblogsActions(blogId))
   }, [match])
   return (
-    <div className="AboutBlog" style={{ marginLeft: '20px',marginRight: '20px',marginTop: '50px' , marginBottom:"100px"}}>
+    <div className="AboutBlog" style={{ marginLeft: '25px',marginRight: '25px',marginTop: '50px' , marginBottom:"100px"}}>
       {loading ? (
         <p style={{ marginTop: '400px', color: 'black' }}>Loading</p>
       ) : (
-        <Card  >
+        <Card className="customCard" >
         
-          <Card.Img variant="top"  src={`${blogs.file}`} style={{height:"50vh", width:"100%"}}/>
+          <Card.Img variant="top"  src={`${blogs.file}`} style={{height:"40vh", width:"100%"}}/>
           <Card.Body>
             <Card.Title>{blogs.blogTitle}<span><small className="text-muted customSmall" style={{fontSize:"12px"}}><span style={{color:"black"}}>@{blogs.userName}</span></small></span></Card.Title>
             <Card.Footer>
