@@ -60,7 +60,7 @@ const BlogForm = ({ history }) => {
   const dispatch = useDispatch()
 
   const blogPost = useSelector((state) => state.blogPost)
-  const { loading, error } = blogPost
+  const { loading, error, success } = blogPost
 
   const formHandler = (e) => {
     e.preventDefault()
@@ -81,6 +81,10 @@ const BlogForm = ({ history }) => {
     }
   }
   }
+
+  
+      
+
 
   return (
     <div>

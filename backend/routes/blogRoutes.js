@@ -5,26 +5,6 @@ const router = express.Router()
 
 import Blog from '../models/blogsModel.js'
 
-// @desc    Get my blog posts
-// @route   GET /api/postblog
-// @access  Public
-router.get('/api/myposts/:id', async (req, res) => {
-  const userName = req.params.id
-
-  try {
-    const blogs = await Blog.find({ userName })
-
-    if (blogs.length === 0) {
-      return res.json({ message: 'No Blogs' })
-    } else {
-      return res.json(blogs)
-    }
-  } catch (error) {
-    console.log(error)
-    return res.status(500).json({ message: 'Server Error' })
-  }
-})
-
 //------Multer Part ----------
 
 const storage = multer.diskStorage({
@@ -77,10 +57,6 @@ router.post('/api/blogpost', upload.single('file'), async (req, res) => {
 
     await blog.save()
 
-    
-
-     
-
     return res.json({
       _id: blog._id,
       blogTitle: blog.blogTitle,
@@ -103,8 +79,28 @@ router.get('/api/allposts', async (req, res) => {
   try {
     const blogs = await Blog.find({}).sort({ createdAt: -1 }).limit(15)
 
-    
     return res.json(blogs)
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({ message: 'Server Error' })
+  }
+})
+
+// @desc    get my blog posts
+// @route   POST /api/myposts
+// @access  Public
+router.post('/api/myposts/', async (req, res) => {
+  const { userName } = req.body
+  console.log(userName)
+
+  try {
+    const blogs = await Blog.find({ userName })
+
+    if (blogs.length === 0) {
+      return res.json({ message: 'No Blogs' })
+    } else {
+      return res.json(blogs)
+    }
   } catch (error) {
     console.log(error)
     return res.status(500).json({ message: 'Server Error' })

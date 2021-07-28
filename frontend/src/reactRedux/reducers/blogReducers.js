@@ -8,6 +8,7 @@ import {
   MY_BLOG_FAIL,
   MY_BLOG_REQUEST,
   MY_BLOG_SUCCESS,
+  MY_BLOG_MESSAGE,
   BLOG_READ_FAIL,BLOG_READ_REQUEST,BLOG_READ_SUCCESS
 } from '../constants/blogConstants'
 
@@ -57,6 +58,7 @@ export const blogPostReducer = (state = blogPost, action) => {
 const myBlogs = {
   loading: true,
   blog: {},
+  meassage:'',
   error: '',
 }
 
@@ -66,6 +68,8 @@ export const myBlogReducer = (state = myBlogs, action) => {
       return { loading: true, ...state }
     case MY_BLOG_SUCCESS:
       return { loading: false, blog: action.payload }
+      case MY_BLOG_MESSAGE:
+        return { loading: false, message: action.payload }
     case MY_BLOG_FAIL:
       return { ...state, loading: false, error: action.payload }
 
