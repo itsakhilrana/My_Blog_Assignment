@@ -47,11 +47,14 @@ router.post('/api/blogpost', upload.single('file'), async (req, res) => {
     return res.json({ message: 'Please fill all the fields.' })
   }
   try {
+
+    const uploadStatus = true;
     const blog = await Blog.create({
       blogTitle,
       authorName,
       userName,
       aboutBlog,
+      uploadStatus,
       file: req.file.path,
     })
 
@@ -64,6 +67,7 @@ router.post('/api/blogpost', upload.single('file'), async (req, res) => {
       userName: blog.userName,
       aboutBlog: blog.aboutBlog,
       file: blog.file,
+      uploadStatus: blog.uploadStatus,
       createdAt: blog.createdAt,
     })
   } catch (error) {

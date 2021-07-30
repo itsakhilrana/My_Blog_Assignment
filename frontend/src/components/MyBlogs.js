@@ -15,7 +15,7 @@ const MyBlogs = () => {
   console.log(blog)
 
   useEffect(() => {
-    dispatch(myblogsActions(blogPost.userName))
+    dispatch(myblogsActions(blogPost.blog.userName))
   }, [dispatch])
  
   return (

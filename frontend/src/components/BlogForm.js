@@ -76,12 +76,19 @@ const BlogForm = ({ history }) => {
     formData.append('file', file)
 
     dispatch(blogPostAction(formData))
-    if (!error) {
-      history.push('/')
-    }
+    // if (!error) {
+    //   history.push('/')
+    // }
   }
   }
 
+  useEffect(()=>{
+
+    if(success){
+      history.push('/')
+      dispatch({ type: "CLEAR_SUCCESS_STATUS", payload: false})
+    }
+  },[success])
   
       
 

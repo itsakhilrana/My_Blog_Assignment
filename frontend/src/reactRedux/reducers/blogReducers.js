@@ -46,7 +46,9 @@ export const blogPostReducer = (state = blogPost, action) => {
     case BLOG_POST_REQUEST:
       return { loading: true, ...state }
     case BLOG_POST_SUCCESS:
-      return { loading: false, blog: action.payload, success:action.status }
+      return { ...state, blog: action.payload, success:action.status }
+    case "CLEAR_SUCCESS_STATUS":
+      return {...state, success: action.payload}
     case BLOG_POST_FAIL:
       return { loading: false, error: action.payload }
 

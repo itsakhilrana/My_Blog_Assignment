@@ -18,6 +18,11 @@ const blogSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    uploadStatus:{
+      type:Boolean,
+      required:true,
+      default:false
+    },
     file:{
       type:String,
       required:true  
